@@ -1,61 +1,233 @@
-.App {
+.landing-page {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero {
+  background: #1f4037;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #99f2c8, #1f4037);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #99f2c8, #1f4037); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #FFF; /* White text */
+  padding: 148px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sub-title {
+  font-size: 24px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btn {
+  display: inline-block;
+  background: #6CA7B2; /* A calming blue-green color for the CTA button */
+  color: #FFF; /* White text */
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 50px;
+  margin-top: 40px;
+  font-size: 20px;
+}
+.btn:hover {
+  background: #5D94A0; /* A slightly darker shade of blue-green on hover */
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.feature {
+  margin: 20px;
+  padding: 20px;
+  background: #FFF; /* White background for feature boxes */
+  border-radius: 10px;
+  text-align: center;
+  color: #444; /* Dark gray text */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  transition: transform 0.2s;
+}
+
+.feature:hover {
+  transform: scale(1.05);
+}
+
+.cta-form {
+  background: #F6F6F6; /* A light gray background for the CTA form section */
+  padding: 50px 0;
+  text-align: center;
+}
+
+.cta-form h2 {
+  color: #444; /* Dark gray text */
+}
+
+.cta-form p {
+  color: #777; /* Light gray text */
+}
+
+.cta-form .btn {
+  background: #6CA7B2; /* Reusing the same calming blue-green color for the CTA button */
+  color: #FFF; /* White text */
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 50px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.cta-form .btn:hover {
+  background: #5D94A0; /* The same slightly darker shade of blue-green on hover */
+}
+.group-link {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background: #25D366; /* WhatsApp green color */
+  color: #FFF;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+.group-link:hover {
+  background: #128C7E; /* A slightly darker shade on hover */
+}
+
+.footer {
+  background: #2D3E50; /* Dark blue background color for the footer */
+  color: #FFF; /* White text color */
+  padding: 40px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  flex: 1;
+  max-width: 300px;
+}
+
+.footer-logo h3 {
+  font-size: 24px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #FFF;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-social {
+  flex: 1;
+}
+
+.social-icon {
+  display: block;
+  color: #FFF;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  background: #1F2C3E; /* Slightly darker blue for the bottom section */
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* PopupForm.css */
+.popup-container {
+  position: relative;
+  display: inline-block;
+}
+
+button {
+  background: #2D6BE3;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #2157C0; /* Slightly darker blue on hover */
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #FFF;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1;
+  max-width: 300px;
+  width: 100%;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+form {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+label {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  width: 40%;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background: #2D6BE3;
   color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.2s;
 }
 
-.App-link {
-  color: #61dafb;
+button[type="submit"]:hover {
+  background: #2157C0; /* Slightly darker blue on hover */
 }
 
-.bg-img{
-  height: 100vh;
-  background-image: url("../public/assets/background.png");
-}
 
-.form-container{
-  width: 100%;
-  justify-content: right;
-}
-
-.form-container .form{
-  margin-left: 700px;
-  padding: 30px;
-  color: #fff;
-}
-
-.submit-btn{
-  color: black;
-}
-
-.submit-btn:hover{
-  background-color: green;
-}
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

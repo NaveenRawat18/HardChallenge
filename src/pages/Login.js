@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+ import React, { useState } from 'react'
 import '../App.css'
-import { FormControl, TextField} from '@mui/material';
 // import { useNavigate } from 'react-router-dom';
 const Login = () => {
     // const navigate = useNavigate();
+    const link = "https://chat.whatsapp.com/F7Pd1KKjpog0uvWQDDywkS";
+    const alertSuccess = () => alert(`Thanks for Joining In Please join in whatsapp group for further updates ${link}`);
+    const alertWarning = () => alert({ message: `Fields can't be empty`, type: 'warning' });
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [mobile, setMobile] = useState("");
@@ -15,24 +17,34 @@ const Login = () => {
   const handleSubmit = (e)=>{
     e.preventDefault();
     console.log(user);
-    const link = "https://chat.whatsapp.com/F7Pd1KKjpog0uvWQDDywkS";
-    alert(`Thanks for Joining In Please join in whatsapp group for further updates ${link}`);
-    // const newUser = {username, email, mobile};
-    // setUser([...user, newUser]);
+    if(!username || !mobile || !email){
+      alertWarning();
+    }
+    else{
+      const newUser = {username, email, mobile};
+      setUser([...user, newUser]);
+      alertSuccess();
+    }
 
   }
-
   return (
-    <div className='bg-img'>
-      <div className='form-container'>
-        <form onSubmit={handleSubmit} className='form'>
-            <input placeholder="Write your name here" type='text' variant='outlined' style={{width: 400, margin: "10px", color: "black"}} required onChange={(e)=>{setUsername(e.target.value)}}/>
-            <input placeholder="Write your email here" type='email' variant='outlined' style={{width: 400, margin: "10px"}} required onChange={(e)=>{setEmail(e.target.value)}}/>
-            <input placeholder="Write your mobile number here" type='text' variant='outlined' style={{width: 400, margin: "10px"}} required onChange={(e)=>{setMobile(e.target.value)}}/>
-            <input placeholder="Submit" type='submit' variant='outlined' style={{width: 300,marginLeft: "14%"}} className='submit-btn'/>
-        </form>   
-        {/* <button onClick={handleBTN}>Hello</button>      */}
-      </div>
+    <div className="bg-img">
+      <h1 className='heading-hard'>75 Hard isn't everyone's cup of tea</h1>
+      {/* <h3 className='heading-hard-2'>It requires the courage and dedication to show consistency toawrds a goal</h3> */}
+      <form className="container" onSubmit={handleSubmit}>
+        <h1>Login</h1>
+
+        <label for="username"><b>username</b></label>
+        <input type="text" placeholder="Enter username" name="email" required onChange={(e)=>{setUsername(e.target.value)}}/>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required onChange={(e)=>{setEmail(e.target.value)}}/>
+
+        <label for="psw"><b>Mobile Number</b></label>
+        <input type="text" placeholder="Enter Password" name="psw" required onChange={(e)=>{setMobile(e.target.value)}}/>
+
+        <button type="submit" className="btn">Login</button>
+      </form>
     </div>
   )
 }
