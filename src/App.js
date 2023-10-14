@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'; // Ensure you have a CSS file for styling
 import Login from './components/PopupForm';
+import { PhoneInput } from "react-international-phone";
 function App() {
+  const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [whatsappLink, setWhatsappLink] = useState('');
   const [telegramLink, setTelegramLink] = useState('');
-  const [seen, setSeen] = useState(false)
+  const [seen, setSeen] = useState(false);
+  
 
   function togglePop () {
       setSeen(!seen);
@@ -31,8 +34,8 @@ function App() {
         {/* <svg xmlns="http://www.w3.org/2000/svg" fill="#EAEAEA" width="100%" height="200px" viewBox="0 0 1440 320">
           <path fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,218.7C672,203,768,149,864,144C960,139,1056,181,1152,181.3C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
         </svg> */}
-        <h1>Welcome to the 75 Hard Challenge</h1>
-        <p className="sub-title">Transform your life through discipline and self-improvement.</p>
+        <h1>WE GHELP TOU TRANSFORM</h1>
+        <p className="sub-title">TAKE 75 HARD CHALLENGE WITH US.</p>
         <button onClick={togglePop} className="btn">Get Started</button>
         {seen ? <Login toggle={togglePop} /> : null}
       </header>
@@ -74,12 +77,24 @@ function App() {
           <div className="cta-form">
           <h2>Ready to embark on your journey?</h2>
           <p>Join the 75 Hard Challenge and transform yourself. Provide your info to get started:</p>
-          <form onSubmit={handleFormSubmit}>
-            <input type="text" placeholder="Name" required />
-            <input type="email" placeholder="Email" required />
-            <input type="tel" placeholder="Mobile Number" required /> {/* Mobile number input */}
-            <input type="file" accept="image/*" required /> {/* Image upload input */}
-            <button type="submit" className="btn">Get Started</button>
+          <form className='conrtainer' onSubmit={handleFormSubmit}>
+              <div className="form-group">
+                  <input type="text" className="form-control" placeholder="First Name" value="" />
+              </div>
+              <div className="form-group">
+                  <input type="text" className="form-control" placeholder="Last Name" value="" />
+              </div>
+              {/* <div> */}
+              <PhoneInput
+                  placeholder="Enter phone number"
+                  value={phone}
+                  onChange={setPhone}
+                  className="form-group"/>
+              {/* </div> */}
+              <div className="form-group">
+                  <input type="text" className="form-control" placeholder="Email" name="name" />
+              </div>
+              <button type="submit" className="btn btn-primary form-submit">Submit</button>
           </form>
           </div>
       )}
