@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import PhoneInput from 'react-phone-input-2';
 import '../App.css'
 const Login = () => {
   // const navigate = useNavigate();
@@ -48,7 +49,18 @@ const Login = () => {
       console.error('Error:', error);
     }
   };
+  const [valid, setValid] = useState(true);
 
+  const handleChange = (value) => {
+    setMobile(value);
+    setValid(validatePhoneNumber(value));
+  };
+
+  const validatePhoneNumber = (phoneNumber) => {
+    const phoneNumberPattern = /^\+?[1-9]\d{1,14}$/;
+
+    return phoneNumberPattern.test(phoneNumber);
+  };
   const handleFormSubmit = (e) => {
     e.preventDefault();
     // console.log(user);
@@ -93,12 +105,32 @@ const Login = () => {
         ) : (
           <div className="cta-form">
           <p>Join the 75 Hard Challenge and transform yourself.</p>
-          <form onSubmit={handleFormSubmit}>
-            <input type="text" placeholder="Name" required value={username} onChange={(e)=>{setUsername(e.target.value)}}/>
-            <input type="email" placeholder="Email" required value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
-            <input type="tel" placeholder="Mobile Number" required value={mobile} onChange={(e)=>{setMobile(e.target.value)}}/> {/* Mobile number input */}
-            {/* <input type="file" accept="image/*" required /> Image upload input */}
-            <button type="submit" className="btn">Get Started</button>
+          <form className='conrtainer' onSubmit={handleFormSubmit}>
+              <div className="form-group">
+                  <input type="text" className="form-control" placeholder="Name" value={username} onChange={(e)=>{setUsername(e.target.value)}}/>
+              </div>
+              <div className="form-group">
+                  <input type="email" className="form-control" placeholder="email" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
+              </div>
+              <div className='form-group'>
+              <PhoneInput
+                  country={'in'}
+                    value={mobile}
+                    onChange={handleChange}
+                    inputProps={{
+                      // required: true,
+                    }}
+                    inputClass="form-control"
+                    // inputClass='form-control'
+                  />
+                {!valid && (
+                  <p>Please enter a valid phone number.</p>
+                )}
+                </div>
+              <div className="form-group">
+                  <input type="text" className="form-control" placeholder="Email" name="name" />
+              </div>
+              <button type="submit" className="btn btn-primary form-submit">Submit</button>
           </form>
           </div>
       )}

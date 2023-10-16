@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'; // Ensure you have a CSS file for styling
 import Login from './components/PopupForm';
-import { PhoneInput } from "react-international-phone";
+import PhoneInput from 'react-phone-input-2';
+
 function App() {
   const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -18,6 +19,19 @@ function App() {
     // Perform form submission actions here (e.g., send data to a server).
     // For this example, we'll just set submitted to true.
     setSubmitted(true);
+  };
+
+  const [valid, setValid] = useState(true);
+
+  const handleChange = (value) => {
+    setPhone(value);
+    setValid(validatePhoneNumber(value));
+  };
+
+  const validatePhoneNumber = (phoneNumber) => {
+    const phoneNumberPattern = /^\+?[1-9]\d{1,14}$/;
+
+    return phoneNumberPattern.test(phoneNumber);
   };
 
   useEffect(() => {
@@ -84,13 +98,21 @@ function App() {
               <div className="form-group">
                   <input type="text" className="form-control" placeholder="Last Name" value="" />
               </div>
-              {/* <div> */}
+              <div className='form-group'>
               <PhoneInput
-                  placeholder="Enter phone number"
-                  value={phone}
-                  onChange={setPhone}
-                  className="form-group"/>
-              {/* </div> */}
+                  country={'in'}
+                    value={phone}
+                    onChange={handleChange}
+                    inputProps={{
+                      // required: true,
+                    }}
+                    inputClass="form-control"
+                    // inputClass='form-control'
+                  />
+                {!valid && (
+                  <p>Please enter a valid phone number.</p>
+                )}
+                </div>
               <div className="form-group">
                   <input type="text" className="form-control" placeholder="Email" name="name" />
               </div>
