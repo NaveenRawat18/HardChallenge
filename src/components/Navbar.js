@@ -1,63 +1,31 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import CssBaseline from '@mui/material/CssBaseline';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import PersonIcon from '@mui/icons-material/Person';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-
-const drawerWidth = 240;
 
 export default function Navbar() {
   return (
-    <Box sx={{ display: 'flex' }}>
-      {/* <CssBaseline />
-      <AppBar
-        position="fixed"
-        sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
-      >
-      </AppBar> */}
-      <Drawer
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: drawerWidth,
-            boxSizing: 'border-box',
-          },
-        }}
-        variant="permanent"
-        anchor="left"
-      >
-        <Toolbar /> {/*for icon of company*/}
-        <List>
-          {['Dashboard', 'User', 'Trending Challenges'].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {
-                    
-                  }
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
-      >
-        <Toolbar />
-      </Box>
-    </Box>
+    <div className="container-fluid p-0 nav-bar">
+        <nav className="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="" className="navbar-brand">
+                <h1 className="m-0 display-4 font-weight-bold text-uppercase text-white">Hard Challenge</h1>
+            </a>
+            <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div className="navbar-nav ml-auto p-4 bg-secondary">
+                    <a href="index.html" className="nav-item nav-link active">Home</a>
+                    <a href="feature.html" className="nav-item nav-link">Our Features</a>
+                    <a href="class.html" className="nav-item nav-link">Rules</a>
+                    <div className="nav-item dropdown">
+                        <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                        <div className="dropdown-menu text-capitalize">
+                            <a href="blog.html" className="dropdown-item">Blog Grid</a>
+                            <a href="single.html" className="dropdown-item">Blog Detail</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" className="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </div>
   );
 }
