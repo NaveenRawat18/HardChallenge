@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { Link } from 'react-router-dom';
 export default function Navbar() {
   return (
     <div className="container-fluid p-0 nav-bar">
@@ -12,17 +12,9 @@ export default function Navbar() {
             </button>
             <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div className="navbar-nav ml-auto p-4 bg-secondary">
-                    <a href="index.html" className="nav-item nav-link active">Home</a>
-                    <a href="feature.html" className="nav-item nav-link">Our Features</a>
-                    <a href="class.html" className="nav-item nav-link">Rules</a>
-                    <div className="nav-item dropdown">
-                        <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                        <div className="dropdown-menu text-capitalize">
-                            <a href="blog.html" className="dropdown-item">Blog Grid</a>
-                            <a href="single.html" className="dropdown-item">Blog Detail</a>
-                        </div>
-                    </div>
-                    <a href="contact.html" className="nav-item nav-link">Contact</a>
+                    <Link to="*" className="nav-item nav-link active">Home</Link>
+                    <Link to="/dashboard" className="nav-item nav-link">Dashboard</Link>
+                    <Link to="/contact" className="nav-item nav-link">Contact</Link>
                 </div>
             </div>
         </nav>

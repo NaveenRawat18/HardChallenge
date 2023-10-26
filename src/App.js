@@ -16,8 +16,8 @@ function App() {
     },
     {
       path: "/dashboard",
-      // element: <Dashboard />
-    },
+      element: <Dashboard />
+    }
   ]);
   return(
     <RouterProvider router={router} />

@@ -70,7 +70,7 @@ const Features = () => {
         <div class="col-md-6 mb-5">
             <div class="row align-items-center">
                 <div class="col-sm-5">
-                    <img class="img-fluid mb-3 mb-sm-0" src="./assets/img/feature-4.jpg" alt="Image" />
+                    <img class="img-fluid mb-3 mb-sm-0" src="./assets/img/feature-5.jpg" alt="Image" />
                     <i class="flaticon-support"></i>
                 </div>
                 <div className="col-sm-7">

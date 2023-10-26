@@ -9,7 +9,7 @@ const Blog = () => {
         </div>
         <div className="row">
             <div className="col-lg-6 mb-5 blog-item">
-                <img className="img-fluid mb-4" src="./assets/img/blog-1.jpg" alt="Image" />
+                <img className="img-fluid mb-4" src="./assets/img/gym.jpeg" alt="Image" />
                 <div className="d-flex align-items-center mb-4">
                     <div className="d-flex flex-column align-items-center justify-content-center rounded-circle bg-primary text-white" style={{width: "80px", height: "80px"}}>
                         <small>21</small>
@@ -29,7 +29,7 @@ const Blog = () => {
                 <a className="btn btn-outline-primary mt-2 px-3" href="">Read More <i className="fa fa-angle-right"></i></a>
             </div>
             <div className="col-lg-6 mb-5 blog-item">
-                <img className="img-fluid mb-4" src="./assets/img/blog-2.jpg" alt="Image" />
+                <img className="img-fluid mb-4" src="./assets/img/skill.jpeg" alt="Image" />
                 <div className="d-flex align-items-center mb-4">
                     <div className="d-flex flex-column align-items-center justify-content-center rounded-circle bg-primary text-white" style={{width: "80px", height: "80px"}}>
                         <small>01</small>
