@@ -7,8 +7,8 @@ import Carosel from '../components/Carosel';
 import Blocks from '../components/Blocks';
 import Services from '../components/Services';
 import Features from '../components/Features';
-import Footer from '../components/Footer';
-import TopInfluencers from '../components/TopInfluencers';
+// import Footer from '../components/Footer';
+// import TopInfluencers from '../components/TopInfluencers';
 import Blog from '../components/Blog';
 function Home() {
   const [phone, setPhone] = useState("");
@@ -56,7 +56,6 @@ function Home() {
       <Blocks />
       <Features />
       <Services />
-      <TopInfluencers />
       <Blog />
       {/* <Footer /> */}
         {/* <svg xmlns="http://www.w3.org/2000/svg" fill="#EAEAEA" width="100%" height="200px" viewBox="0 0 1440 320">

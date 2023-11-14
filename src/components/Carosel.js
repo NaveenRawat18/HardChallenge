@@ -47,27 +47,13 @@ return (
 			seen ? 
 			<PopupForm toggle={togglePop} /> :
 			<div>
-        	<h3 className="text-primary text-capitalize m-0">Get Fitter & Stronger</h3>
-            <h2 className="display-2 m-0 mt-2 mt-md-4 text-white font-weight-bold text-capitalize">Take 75 Hard Challenge</h2>
+        	<h3 className="text-primary text-capitalize m-0">75 Hard Challenge</h3>
+            <h2 className="display-2 m-0 mt-2 mt-md-4 text-white font-weight-bold text-capitalize">Transform Your Life with Resilience and Growth</h2>
 			<button onClick={togglePop} className="btn btn-lg btn-outline-light mt-3 mt-md-5 py-md-3 px-md-5">Get Started</button>
 			</div>
 		}
 		</Carousel.Caption>
 		</Carousel.Item>
-		{/* <Carousel.Item interval={1500} classNameName="carousel-inner carousel-item active"> 
-		<img className="w-100" src="./assets/img/carousel-1.jpg" alt="Image" />
-		<Carousel.Caption  className="carousel-caption d-flex flex-column align-items-center justify-content-center"> 
-		{
-			seen ? 
-			<PopupForm toggle={togglePop} /> :
-			<div>
-        	<h3 className="text-primary text-capitalize m-0">Get Fitter & Stronger</h3>
-            <h2 className="display-2 m-0 mt-2 mt-md-4 text-white font-weight-bold text-capitalize">Take 75 Hard Challenge</h2>
-			<button onClick={togglePop} className="btn btn-lg btn-outline-light mt-3 mt-md-5 py-md-3 px-md-5">Get Started</button>
-			</div>
-		}
-		</Carousel.Caption> 
-		</Carousel.Item>   */}
 	</Carousel> 
 	</div> 
 ); 
