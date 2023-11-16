@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import TaskManager from './TaskManager'
-import { addSeconds } from 'date-fns'
 import AddProgress from './AddProgress'
 
 const Dashboard = () => {
@@ -8,7 +7,6 @@ const Dashboard = () => {
   const [SelectedBook, setSelectedBook] = useState("")
   const [skill, setSkill] = useState("")
   const [open, setOpen] = useState(false)
-
   const date = new Date().getDate()
   const tasks = [
     { id: 1, title: 'Drink 4L water', completedDate: `${date}` },
@@ -18,19 +16,24 @@ const Dashboard = () => {
     { id: 5, title: 'Take Selfie', completedDate: `${date}` },
     // Add more tasks with different dates
   ];
-  
-  function Callback(){
-    setOpen(!open)
+  const [formInput, setFormInput] = useState([])
+
+  const handleUpdate = (Data)=>{
+    // console.log(Data)
+    setFormInput([...formInput, Data])
+    localStorage.setItem('formInput', JSON.stringify(formInput))
+    const myVal = localStorage.getItem('formInput')
+    console.log(myVal)
   }
   return (
     <div>
         <div className='header'>
             <h1>User Name</h1>
         </div>
-        <input type='button' value='Add progress' onChange={Callback}/>
+        <input type='button' value='Add progress' onClick={()=>setOpen(!open)}/>
         {
-          !open ?
-           <AddProgress /> : <TaskManager tasks={tasks}/>
+          open ?
+           <AddProgress Data={handleUpdate} open={open} setOpen={setOpen}/> : <TaskManager tasks={tasks}/>
         }
     </div>
   )

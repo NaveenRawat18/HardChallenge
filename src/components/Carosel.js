@@ -39,10 +39,9 @@ export default function Carosel() {
 	
 return ( 
 	<div className='container-fluid p-0'> 
-	<Carousel className="carousel"> 
-		<Carousel.Item interval={0} classNameName="carousel-inner carousel-item active"> 
+		<div interval={0} classNameName="carousel-item active"> 
 		<img className="w-100" src="./assets/img/carousel-2.jpg" alt="Image" />
-		<Carousel.Caption className="carousel-caption d-flex flex-column align-items-center justify-content-center"> 
+		<p className="carousel-caption d-flex flex-column align-items-center justify-content-center pt-5"> 
 		{
 			seen ? 
 			<PopupForm toggle={togglePop} /> :
@@ -52,9 +51,8 @@ return (
 			<button onClick={togglePop} className="btn btn-lg btn-outline-light mt-3 mt-md-5 py-md-3 px-md-5">Get Started</button>
 			</div>
 		}
-		</Carousel.Caption>
-		</Carousel.Item>
-	</Carousel> 
+		</p>
+		</div>
 	</div> 
 ); 
 }
