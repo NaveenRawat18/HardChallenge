@@ -5,11 +5,14 @@ import React, {useState} from 'react';
 
 function TaskList(tasks) {
   const obj = tasks.tasks
-  const [color, setColor] = useState(true)
   const tick = {
     "yes": "✓",
     "no": "X"
   }
+  const color1 = obj.workouts === 'yes' ? "#145A32" : "red";
+  const color2 = obj.diet === 'yes' ? "#145A32" : "red";
+  const color3 = obj.Learning === 'yes' ? "#145A32" : "red";
+  const color4 = obj.read === 'yes' ? "#145A32" : "red";
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={obj.image} />
@@ -23,8 +26,8 @@ function TaskList(tasks) {
               </p>
             </Col>
             <Col>
-              <p style={{color: color ? "#145A32" : "red", fontSize: "20px", fontWeight: "bolder"}}>
-                {tick[`${obj.workouts}`]}
+              <p style={{color: color3, fontSize: "20px", fontWeight: "bolder"}}>
+                {tick[`${obj.Learning}`]}
               </p>
             </Col>
           </Row>
@@ -35,7 +38,7 @@ function TaskList(tasks) {
               </p>
             </Col>
             <Col>
-              <p style={{color: color ? "#145A32" : "red", fontSize: "20px", fontWeight: "bolder"}}>
+              <p style={{color: color1, fontSize: "20px", fontWeight: "bolder"}}>
                 {tick[`${obj.workouts}`]}
               </p>
             </Col>
@@ -47,7 +50,7 @@ function TaskList(tasks) {
               </p>
             </Col>
             <Col>
-              <p style={{color: color ? "#145A32" : "red", fontSize: "20px", fontWeight: "bolder"}}>
+              <p style={{color: color2, fontSize: "20px", fontWeight: "bolder"}}>
                 {tick[`${obj.diet}`]}
               </p>
             </Col>
@@ -59,7 +62,7 @@ function TaskList(tasks) {
               </p>
             </Col>
             <Col>
-              <p style={{color: color ? "#145A32" : "red", fontSize: "20px", fontWeight: "bolder"}}>
+              <p style={{color: color4, fontSize: "20px", fontWeight: "bolder"}}>
                 {
                   tick[`${obj.read}`]
                 }
