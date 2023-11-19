@@ -5,8 +5,14 @@ const AddProgress = ({open, setOpen, Data}) => {
     const [workouts, setWorkouts] = useState("")
     const [diet, setDiet] = useState("")
     const [read, setRead] = useState("")
-    const [selfie, setSelfie] = useState("")
-    const date = new Date().getDate()
+    const [image, setImage] = useState()
+    const day = new Date().getDate()
+    const year = new Date().getFullYear()
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+    const month = new Date().getMonth()
+    const date = `${day} - ${monthNames[month]} - ${year}`
     const handleSubmit = (e)=>{
         e.preventDefault()
         const userInput = {
@@ -15,7 +21,7 @@ const AddProgress = ({open, setOpen, Data}) => {
           workouts,
           diet,
           read,
-          selfie
+          image
         }
         // console.log(userInput)
         Data(userInput)
@@ -30,7 +36,7 @@ const AddProgress = ({open, setOpen, Data}) => {
             <input type='text' value={workouts} placeholder='Did 45mins 2 workouts?' onChange={(e)=>{setWorkouts(e.target.value)}}/>
             <input type='text' value={diet} placeholder='Ate Healthy?' onChange={(e)=>{setDiet(e.target.value)}}/>
             <input type='text' value={read} placeholder='Dring 4L water' onChange={(e)=>{setRead(e.target.value)}}/>
-            <input type='text' value={selfie} placeholder='Took Selfie?' onChange={(e)=>{setSelfie(e.target.value)}}/>
+            <input type='file' onChange={(e)=>{setImage(URL.createObjectURL(e.target.files[0]))}}/>
             <input type='submit' value='submit' className='class-btn'/>
           </form>
       </div>
