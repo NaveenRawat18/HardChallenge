@@ -1,22 +1,18 @@
 import React from 'react';
 import TaskList from './TaskList';
 
-const TaskManager = ({ tasks }) => {
+  const TaskManager = (tasks) => {
   // Group tasks by date
-  const tasksByDate = tasks.reduce((acc, task) => {
-    const date = task.completedDate;
-    if (!acc[date]) {
-      acc[date] = [];
-    }
-    acc[date].push(task);
-    return acc;
-  }, {});
-
+  // console.log(tasks)
+  // const element = tasks[0]
   return (
     <div>
-      {Object.keys(tasksByDate).map((date) => (
-        <TaskList key={date} date={date} tasks={tasksByDate[date]} />
-      ))}
+      {
+        tasks && tasks.tasks.map((item)=>{
+          // console.log(item)
+          return <TaskList tasks={item} key={item.id}/>
+        })
+      }
     </div>
   );
 };

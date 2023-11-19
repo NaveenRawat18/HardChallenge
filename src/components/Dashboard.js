@@ -8,23 +8,23 @@ const Dashboard = () => {
   const [skill, setSkill] = useState("")
   const [open, setOpen] = useState(false)
   const date = new Date().getDate()
-  const tasks = [
-    { id: 1, title: 'Drink 4L water', completedDate: `${date}` },
-    { id: 2, title: `Read 10 Pages of ${SelectedBook}`, completedDate: `${date}` },
-    { id: 3, title: 'Eat Healthy', completedDate: `${date}` },
-    { id: 4, title: `learn ${skill} for 2hr`, completedDate: `${date}` },
-    { id: 5, title: 'Take Selfie', completedDate: `${date}` },
-    // Add more tasks with different dates
-  ];
+  // const tasks = [
+  //   { id: 1, title: 'Drink 4L water', completedDate: `${date}` },
+  //   { id: 2, title: `Read 10 Pages of ${SelectedBook}`, completedDate: `${date}` },
+  //   { id: 3, title: 'Eat Healthy', completedDate: `${date}` },
+  //   { id: 4, title: `learn ${skill} for 2hr`, completedDate: `${date}` },
+  //   { id: 5, title: 'Take Selfie', completedDate: `${date}` },
+  //   // Add more tasks with different dates
+  // ];
   const [formInput, setFormInput] = useState([])
 
   const handleUpdate = (Data)=>{
     // console.log(Data)
     setFormInput([...formInput, Data])
     localStorage.setItem('formInput', JSON.stringify(formInput))
-    const myVal = localStorage.getItem('formInput')
-    console.log(myVal)
   }
+  const tasks = JSON.parse(localStorage.getItem('formInput'));
+  // console.log(tasks)
   return (
     <div>
         <div className='header'>

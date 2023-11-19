@@ -13,11 +13,6 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
-  // const [user, setUser] = useState([{
-  //   username: username,
-  //   email:email,
-  //   mobile: mobile
-  // }]);
 
   function togglePop () {
       setSeen(!seen);
