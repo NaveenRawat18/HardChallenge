@@ -15,11 +15,7 @@ export default function Navbar() {
             <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div className="navbar-nav ml-auto p-4 bg-secondary">
                     <Link to="*" className="nav-item nav-link active">Home</Link>
-                    {
-                        seen?
-                        <Link to="/dashboard" className="nav-item nav-link">Dashboard</Link>:
-                        <></>
-                    }
+                    <Link to="/dashboard" className="nav-item nav-link">Dashboard</Link>
                     <Link to="/contact" className="nav-item nav-link">Contact</Link>
                 </div>
             </div>

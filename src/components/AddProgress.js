@@ -24,6 +24,19 @@ const AddProgress = ({open, setOpen, Data}) => {
           image
         }
         // console.log(userInput)
+        // if(Learning==="no" || Learning==="No" || workouts==="no" || workouts==="No" || diet==="no" || diet==="No" || read==="No" || read==="no")
+        // {
+        //   var challengeStatus = window.alert("Do you know, If you fail any tasks you need to start over?")
+        //   if(challengeStatus)
+        //   {
+        //     window.alert("Oops! You need to start over.")
+        //     toggle(true)
+        //   }
+        // }
+        // else
+        // {
+        //   toggle(false)
+        // }
         Data(userInput)
         // console.log(userInput)
         setOpen(!open)

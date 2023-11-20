@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import React, {useState} from 'react';
+import React from 'react';
 
 function TaskList(tasks) {
   const obj = tasks.tasks
@@ -14,8 +14,8 @@ function TaskList(tasks) {
   const color3 = obj.Learning === 'yes' ? "#145A32" : "red";
   const color4 = obj.read === 'yes' ? "#145A32" : "red";
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={obj.image} />
+    <Card style={{ width: '18rem', margin: "20px" }}>
+      <Card.Img variant="top" src={obj.image} style={{width: "cover"}}/>
       <Card.Header variant="primary">Date: {obj.date}</Card.Header>
       <Card.Body>
         <Card.Title>Today's Tasks</Card.Title>
